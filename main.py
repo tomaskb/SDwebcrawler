@@ -4,13 +4,13 @@ from spider import Spider
 from domain import *
 from general import *
 
-PROJECT_NAME = input("Digite o nome do Projeto: ")
-HOMEPAGE = input("Digite a HTML a ser procurada: ")
+PROJECT_NAME = input("Crawl Name: ")
+HOMEPAGE = input("Insert URL to crawl: ")
 
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
 CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
-NUMBER_OF_THREADS = 8
+NUMBER_OF_THREADS = 50
 queue = Queue()
 Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
 
