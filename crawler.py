@@ -35,8 +35,8 @@ class Crawler:
     @staticmethod
     def crawl_page(thread_name, page_url):
         if page_url not in Crawler.crawled:
-            print(thread_name + ' agora buscando em ' + page_url)
-            print('Na fila: ' + str(len(Crawler.queue)) + ' | Já pesquisou:  ' + str(len(Crawler.crawled)))
+            print(thread_name + ' searching ' + page_url)
+            print('-In QUEUE: ' + str(len(Crawler.queue)) + ' :: Searched:  ' + str(len(Crawler.crawled)))
             Crawler.add_links_to_queue(Crawler.gather_links(page_url))
             Crawler.queue.remove(page_url)
             Crawler.crawled.add(page_url)
