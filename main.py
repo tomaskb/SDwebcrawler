@@ -29,7 +29,7 @@ def work():
         Spider.crawl_page(threading.current_thread().name, url)
         queue.task_done()
 
-#Cada link na fila é um novo Job
+#Cada link na fila eh um novo Job
 def create_jobs():
     for link in file_to_set(QUEUE_FILE):
         queue.put(link)
@@ -37,7 +37,7 @@ def create_jobs():
     crawl()
 
 
-#Se existe itens na fila, é pesquisado
+#Se existe itens na fila, eh pesquisado
 def crawl():
     queued_links = file_to_set(QUEUE_FILE)
     if len(queued_links) > 0:
